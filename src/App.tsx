@@ -1,33 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div id="header">
+          <h1 className="animateText">Simon <span className="accent">Kapicka</span></h1>
+          <div className="horizontalFlex">
+              <div className="verticalFlex">
+                  <h2>freelance website & software developer</h2>
+                  <div className="buttons">
+                      <a href="cv.pdf" target="_blank">Portfolio</a>
+                      <a href="#about">About</a>
+                  </div><br />
+                  <div className="socials">
+                      <a href="https://github.com/simokapi" target="_blank"><img src="imgs/logos/github-mark-white.png" /></a>
+                      <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src="imgs/logos/LI-In-Bug.png" /></a>
+                      <a href="https://simokapi.itch.io/" target="_blank"><img src="imgs/logos/itchio.png" /></a>
+                  </div>
+              </div>
+              <img draggable="false" className="profilepic" src="imgs/profilepic.jpg" />
+          </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Deployment test
-      </p>
     </>
   )
 }
