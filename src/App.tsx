@@ -35,6 +35,7 @@ function App() {
           <div id="name">
             <h1>Simon</h1>
             <h1>Kapicka<span ref={caretRef}>_</span></h1>
+            <span className="chip"><p>📍 California native 🇺🇸 <br/> Based in Prague, Czechia 🇨🇿</p></span>
           </div>
           <div id="socials">
             <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>

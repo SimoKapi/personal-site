@@ -7,6 +7,10 @@
     src: local('Menlo Regular'), url('assets/Menlo-Regular.woff') format('woff');
 }
 
+.chip {
+    font-size: 20px;
+}
+
 #cover {
     width:100%;
     min-height: 100vh;
@@ -96,6 +100,10 @@
     #name {
         font-size:50px;
         margin-bottom:0;
+    }
+
+    .chip {
+        font-size:10px;
     }
     
     #cursorAnimation {

@@ -39,6 +39,8 @@
 #grayscaleImage, #nextImage {
     filter:grayscale(100%) blur(10px);
     opacity: 0.15;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 #imageSwap {
