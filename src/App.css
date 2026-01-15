@@ -62,17 +62,6 @@
     align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    #cover {
-        flex-direction: column;
-        padding-bottom:100px;
-    }
-
-    #cover .info {
-        flex-direction: column-reverse;
-    }
-}
-
 #body {
     height: 400vh;
     width:100vw;
@@ -84,4 +73,32 @@
     width:max-content;
     font-size:80px;
     font-family: Menlo Regular;
+}
+
+@media screen and (max-width: 768px) {
+    #cover .info #socials a:nth-child(2) {
+        transform:translateX(0%);
+    }
+
+    #cover .info #socials a:nth-child(3) {
+        transform:translateX(0%);
+    }
+
+    #cover {
+        flex-direction: column;
+        padding-bottom:100px;
+    }
+
+    #cover .info {
+        flex-direction: column-reverse;
+    }
+
+    #name {
+        font-size:50px;
+        margin-bottom:0;
+    }
+    
+    #cursorAnimation {
+        margin-top:10%!important;
+    }
 }
