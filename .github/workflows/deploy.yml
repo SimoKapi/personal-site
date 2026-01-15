@@ -29,4 +29,3 @@ jobs:
             git pull origin master
             npm install
             npm run build 
-            # Nginx will automatically pick up the new files in the /dist folder
