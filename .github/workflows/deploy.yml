@@ -26,6 +26,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/personal-site
-            git pull origin master
-            npm install
+            git fetch origin master
+            git reset --hard origin/master
+            npm ci
             npm run build 
