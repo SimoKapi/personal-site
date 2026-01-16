@@ -151,6 +151,7 @@ function App() {
           </ul>
         </div>
         <div id="content">
+          <a href="/cv.pdf" target="_blank">View my CV</a>
           <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
           {JsonEntryMap(work)}
 
