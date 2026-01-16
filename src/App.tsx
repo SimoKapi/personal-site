@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react'
 
 import './App.css'
 
-import Header from './Header';
-
 import ImageCycle from './utils/ImageCycle';
 import GithubLogo from './assets/logos/github-mark-white.png';
 import ItchioLogo from './assets/logos/itchio.png';
@@ -47,7 +45,6 @@ function App() {
           <ImageCycle/>
         </div>
       </div>
-      {/* <Header/> */}
       <div id="body">
         <div id="nav">
           <ul className="dotted-bg-strong">
