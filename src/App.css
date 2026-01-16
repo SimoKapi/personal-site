@@ -9,6 +9,9 @@
 
 .location {
     font-size: 20px;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    min-width:0;
 }
 
 .chip {
@@ -30,6 +33,7 @@
     position:relative;
     display:flex;
     flex-direction: row;
+    overflow-x:hidden;
 }
 
 #cover .info {
@@ -279,17 +283,12 @@ a {
         margin-left:0;
     }
 
-    /* #body #content .header .url {
-        display: block;
-        white-space: nowrap;
-    } */
-
-    #body #nav {
+    #body #nav, #body #progress {
         display: none;
     }
 
     #body #content {
-        padding:2.5em;
+        padding:2em;
     }
 
     #body #content .project .info .textContent {
@@ -298,6 +297,10 @@ a {
 
     .url {
         opacity:1;
+    }
+
+    .location {
+        font-size:15px;
     }
 }
 
