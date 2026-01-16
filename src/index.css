@@ -2,10 +2,10 @@
     --main: rgb(28, 28, 28);
     --contrast: rgb(65, 65, 65);
     --dark: rgb(24, 24, 24);
-    --light: rgb(35, 35, 35);
+    --light: rgb(41, 67, 76);
     --accent: rgb(68, 146, 255);
     --panel: rgb(35, 35, 35);
-    --panel-head: rgb(50, 50, 50);
+    --panel-head: rgb(89, 135, 199);
     --border: rgb(50, 50, 50);
     --gray: rgb(80, 80, 80);
 }
@@ -14,10 +14,8 @@ html, body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    /* color: whitesmoke; */
     background-color: var(--main);
     font-family: sans-serif;
-    /* overflow-x: hidden; */
     scroll-behavior: smooth;
-    width:100vw!important;
+    color:whitesmoke;
 }

@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Second Foundation",
+        "chips": ["Kotlin", "Angular"],
+        "body": "I developed a system for Second Foundation Tech using Kotlin on the backend and Angular/JS on the frontend. Frameworks used are Micronaut and Hibernate. Currently working on various automation tasks.",
+        "image": "/imgs/secfo.png"
+    },
+    {
+        "title": "Czech Academy of Sciences",
+        "chips": ["Python", "PyTorch", "HuggingFace"],
+        "body": "I am working on an image segmentation transformer model, using PyTorch and the HuggingFace set of pretrained transformer models",
+        "image": "/imgs/cas.jpg"
+    }
+]
