@@ -1,7 +1,13 @@
 :root {
     --main: rgb(28, 28, 28);
+    --contrast: rgb(65, 65, 65);
     --dark: rgb(24, 24, 24);
+    --light: rgb(35, 35, 35);
     --accent: rgb(68, 146, 255);
+    --panel: rgb(35, 35, 35);
+    --panel-head: rgb(50, 50, 50);
+    --border: rgb(50, 50, 50);
+    --gray: rgb(80, 80, 80);
 }
 
 html, body {
@@ -11,6 +17,7 @@ html, body {
     /* color: whitesmoke; */
     background-color: var(--main);
     font-family: sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     scroll-behavior: smooth;
+    width:100vw!important;
 }

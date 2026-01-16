@@ -30,12 +30,12 @@ function App() {
 
   return (
     <>
-      <div id="cover">
+      <div id="cover" className="dotted-bg">
         <div className="info">
           <div id="name">
             <h1>Simon</h1>
             <h1>Kapicka<span ref={caretRef}>_</span></h1>
-            <span className="chip"><p>📍 California native 🇺🇸 <br/> Based in Prague, Czechia 🇨🇿</p></span>
+            <span className="chip"><p>California native 🇺🇸 <br/>📍 Based in Prague, Czechia 🇨🇿</p></span>
           </div>
           <div id="socials">
             <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
@@ -47,9 +47,25 @@ function App() {
           <ImageCycle/>
         </div>
       </div>
-      <Header/>
+      {/* <Header/> */}
       <div id="body">
+        <div id="nav">
+          <ul className="dotted-bg-strong">
+            <li className="header">✏️ Portfolio</li>
+            <li><a>HDAO</a></li>
+            <li className="subHeader">HDAO</li>
+            <li><a>HDAO</a></li>
+            <li><a>HDAO</a></li>
+            <li><a>HDAO</a></li>
+            <li><a>HDAO</a></li>
+          </ul>
+        </div>
+        <div id="content">
 
+        </div>
+        <div id="progress">
+
+        </div>
       </div>
     </>
   )
