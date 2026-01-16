@@ -283,12 +283,25 @@ a {
         margin-left:0;
     }
 
-    #body #nav, #body #progress {
+    #body {
+        flex-direction: column;
+    }
+
+    #body #nav {
+        margin:0;
+    }
+
+    #body #nav .active {
+        background:none!important;
+    }
+
+    #body #progress {
         display: none;
     }
 
     #body #content {
-        padding:2em;
+        padding:0 2em;
+        margin-top:0;
     }
 
     #body #content .project .info .textContent {
