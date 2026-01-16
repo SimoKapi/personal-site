@@ -6,15 +6,33 @@
         "image": "/imgs/PlantIdentifier.png"
     },
     {
-        "title": "ScreenBlocker",
-        "chips": ["Swift"],
-        "body": "I took my first shot at vibe coding and created a MacOS app that allows the computer to display an image and subsequently locks the screen if any part of the Mac is clicked. \n A few limitations: does not overlay fullscreen windows, only sends screen to the screen saver (you can set your computer to lock after screen saver)",
-        "image": "/imgs/shrekIcon.png"
-    },
-    {
         "title": "First place winner of the 2025 Hackhealth hackathon",
         "chips": ["NodeJS", "Bootstrap"],
         "body": "Two of my friends and I won first place in the hackathon, after presenting a product automating certain processes for medical staff and making the patient data monitoring more efficient.",
         "image": "/imgs/hackhealth2025.jpg"
+    },
+    {
+        "title": "Java Rasterizer",
+        "chips": ["Java"],
+        "body": "Created using plain Java, the calculations required to bring this to reality were done by me. The project takes an ASCII encoded STL file and transforms, projects and renders a 3D model. Full code can be found on my [GitHub](https://github.com/SimoKapi)",
+        "image": "/imgs/renderer.png"
+    },
+    {
+        "title": "DropStorage",
+        "chips": ["BunJS", "JavaScript", "TypeScript", "HTML", "CSS"],
+        "body": "One of my most favorite projects. I created my own cloud storage service, running on my server. It consists of two projects - a web hosted UI interface, which places API calls to a server-side RESTful API script. Accessible at [storage.simokapi.com](https://storage.simokapi.com)",
+        "image": "/imgs/dropstorage.png"
+    },
+    {
+        "title": "ScreenBlocker",
+        "chips": ["Swift"],
+        "body": "I took my first shot at vibe coding and created a MacOS app that allows the computer to display an image and subsequently locks the screen if any part of the Mac is clicked. \n\n\n\n A few limitations: does not overlay fullscreen windows, only sends screen to the screen saver (you can set your computer to lock after screen saver)",
+        "image": "/imgs/shrekIcon.png"
+    },
+    {
+        "title": "Bouncer",
+        "chips": ["Unity Engine", "C#"],
+        "body": "A unique and interesting take on VR Physics — the surreal experience of the virtual world. \n Accessible on [Meta Quest AppLab](https://www.meta.com/experiences/25998350426422873/)",
+        "image": "/imgs/bouncervr.png"
     }
 ]

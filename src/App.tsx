@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import './App.css'
 
@@ -9,6 +10,8 @@ import LinkedinLogo from './assets/logos/LI-In-Bug.png';
 
 import projects from './projects.json';
 import work from './work.json';
+
+import CopyableHeader from './CopyableHeader';
 
 interface Entry {
     title: string;
@@ -62,7 +65,7 @@ function App() {
   })
 
   function titleToID(title: string) {
-    return title.replace(" ", "")
+    return title.replaceAll(" ", "")
   }
 
   function mapNavbar(file: Entry[]) {
@@ -78,21 +81,22 @@ function App() {
             return (
               <div id={titleToID(entry.title)} className="project">
                 <div className="header">
-                  <div className="title">
-                    <h1>{entry.title}</h1>
-                    <a className="url" href={"#" + titleToID(entry.title)}>#</a>
-                  </div>
+                  <CopyableHeader className="title" id={titleToID(entry.title)}>{entry.title}</CopyableHeader>
                   <div className="chips">
                     {entry.chips.map((chip:string) => {
                       return (<span className="chip">{chip}</span>)
                     })}
                   </div>
                 </div>
-                <div className="info">
+                <div className="info" style={{ whiteSpace: 'pre-wrap' }}>
                   {entry.image &&
                     <img className="coverImage" src={entry.image}/>
                   }
-                  <p className="textContent">{entry.body}</p>
+                  <ReactMarkdown components={{
+                    a: ({node, ...props}) => {
+                      return(<a target="_blank" {...props}/>)
+                    }
+                  }}>{entry.body}</ReactMarkdown>
                 </div>
               </div>
             )
@@ -101,6 +105,20 @@ function App() {
     )
   }
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1);
+      const element = document.getElementById(id)
+
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({behavior: 'smooth'});
+        }, 100);
+      }
+    }
+  }, [])
+
   return (
     <>
       <div id="cover" className="dotted-bg">
@@ -108,7 +126,7 @@ function App() {
           <div id="name">
             <h1>Simon</h1>
             <h1>Kapicka<span ref={caretRef}>_</span></h1>
-            <span className="location"><p>California native 🇺🇸 <br/>📍 Based in Prague, Czechia 🇨🇿</p></span>
+            <span className="location"><p>{/* California native 🇺🇸 <br/> */}📍 Based in Prague, Czechia 🇨🇿</p></span>
           </div>
           <div id="socials">
             <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
@@ -122,8 +140,6 @@ function App() {
       </div>
       <div id="body">
         <div id="nav">
-          {/* <img id="profile-pic" src="/imgs/profilepic.jpg"/>
-          <h1 id="about-nav">Simon Kapicka</h1> */}
           <ul className="dotted-bg-strong">
             <li key="header" className="header">Navigation</li>
             <li key="work" className="subHeader"><a href="#work">Work experience</a></li>
@@ -135,10 +151,11 @@ function App() {
           </ul>
         </div>
         <div id="content">
-          <h1 id="work" className="subtitle">Work experience <a className="url" href="#work">#</a></h1>
+          <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
           {JsonEntryMap(work)}
 
-          <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1>
+          <CopyableHeader id="projects" className="subtitle">Projects</CopyableHeader>
+          {/* <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1> */}
           {JsonEntryMap(projects)}
 
           <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
@@ -147,7 +164,7 @@ function App() {
           <p>Currently 18 years old, I'm a High School student interested in a Computer Science / Software Development career.</p>
 
           <h1 className="subtitle" id="contact">Contact <a className="url" href="#contact">#</a></h1>
-          <p>Feel free to contact me with inquiries at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
+          <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
         </div>
         <div id="progress">
           

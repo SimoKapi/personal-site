@@ -10,5 +10,11 @@
         "chips": ["Python", "PyTorch", "HuggingFace"],
         "body": "I am working on an image segmentation transformer model, using PyTorch and the HuggingFace set of pretrained transformer models",
         "image": "/imgs/cas.jpg"
+    },
+    {
+        "title": "Freelance web development",
+        "chips": ["HTML", "CSS", "JavaScript", "React", "Angular"],
+        "body": "I spend my time creating visually pleasing and functional websites for clients. \n Contact me at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)",
+        "image": "/imgs/index.html.png"
     }
 ]
