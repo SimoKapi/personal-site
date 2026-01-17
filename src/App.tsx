@@ -66,7 +66,7 @@ function App() {
   })
 
   function titleToID(title: string) {
-    return title.replaceAll(" ", "")
+    return encodeURIComponent(title)
   }
 
   function mapNavbar(file: Entry[]) {
@@ -155,7 +155,11 @@ function App() {
           <a href="/cv.pdf" target="_blank">View my CV</a>
 
           <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
-          <p>I've been programming ever since I was eight years old. It's always been my "productive fun", especially in my Minecraft plugin era where I would playtest my plugins... and perhaps get carried away and beat the game. Since 2024, I've been interested in bridging my passion for programming and development with health and biology, which is why I'd like to pursue a path in Biomedical Engineering. <br/> I'm currently 18 years old, a senior at Nový PORG in Prague.</p>
+          <p>I've been programming ever since I was eight years old. It's always been my "productive fun", especially in my Minecraft plugin era where I would playtest my plugins... and perhaps get carried away and beat the game. That's also why I first tried out game development, like my <a href={"#" + titleToID("Bouncer")}>Bouncer</a> VR game.</p>
+          <br/>
+          <p>Since 2024, I've been interested in bridging my passion for programming and development with health and biology, which is why I'd like to pursue a path in Biomedical Engineering. Check out my cool related <a href={"#" + titleToID("VAD (heart pump) telemetry system")}>VAD telemetry system</a> project!</p>
+          <br/>
+          <p>I'm currently 18 years old, a high school senior at Nový PORG in Prague.</p>
 
           <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
           {JsonEntryMap(work)}
