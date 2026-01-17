@@ -2,19 +2,19 @@
     {
         "title": "Second Foundation",
         "chips": ["Kotlin", "Angular"],
-        "body": "I developed a system for Second Foundation Tech using Kotlin on the backend and Angular/JS on the frontend. Frameworks used are Micronaut and Hibernate. Currently working on various automation tasks.",
+        "body": "Currently a Junior Developer at the Prague branch. I develop systems automations for various teams, working as part of the Enterprise Resource Planning (ERP) team.",
         "image": "/imgs/secfo.png"
     },
     {
         "title": "Czech Academy of Sciences",
         "chips": ["Python", "PyTorch", "HuggingFace"],
-        "body": "I am working on an image segmentation transformer model, using PyTorch and the HuggingFace set of pretrained transformer models",
+        "body": "In December 2025, I concluded my year-long internship at the [Institute for Theory and Automation at the Czech Academy of Sciences](https://utia.cas.cz). Here, I applied image segmentation using the semantic transformer called `SegFormer MiT-b0`, developed by NVIDIA, to extract river data from lithographic digital map scans. \n Due to limited amounts of data, we couldn't train the model directly on the map scans, which is why we opted to use transfer learning. This is a method that allows models to be trained on datasets with similar geometries and strucure, dialing in the proper weights and model parameters, before being fine-tuned on a limited real dataset. This saved us a lot of time in data annotation, as we could utilize an open source dataset for segmenting cracks in concrete.",
         "image": "/imgs/cas.jpg"
     },
     {
         "title": "Freelance web development",
         "chips": ["HTML", "CSS", "JavaScript", "React", "Angular"],
-        "body": "I spend my time creating visually pleasing and functional websites for clients. \n Contact me at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)",
+        "body": "Over the years, I've created a few websites for various clients. My style ranges from pure HTML/CSS/JS to using advanced frameworks like React or Angular. \n Feel free to reach out with business inquiries at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)!",
         "image": "/imgs/index.html.png"
     }
 ]

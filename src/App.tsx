@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import remarkBreaks from "remark-breaks";
 
 import './App.css'
 
@@ -92,7 +93,7 @@ function App() {
                   {entry.image &&
                     <img className="coverImage" src={entry.image}/>
                   }
-                  <ReactMarkdown components={{
+                  <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
                     a: ({node, ...props}) => {
                       return(<a target="_blank" {...props}/>)
                     }
@@ -164,14 +165,14 @@ function App() {
           <CopyableHeader id="projects" className="subtitle">Projects</CopyableHeader>
           {/* <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1> */}
           {JsonEntryMap(projects)}
+          <CopyableHeader id="contact" className='subtitle'>Contact</CopyableHeader>
+          <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
         </div>
         <div id="progress">
           
         </div>
       </div>
       <div id="footer">
-        <CopyableHeader id="contact" className='subtitle'>Contact</CopyableHeader>
-        <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
       </div>
     </>
   )
