@@ -141,6 +141,7 @@ function App() {
       </div>
       <div id="body">
         <div id="nav">
+          <a href="/cv.pdf" target="_blank" className="button w-full">View my CV</a>
           <ul className="dotted-bg-strong">
             <li key="header" className="header">Navigation</li>
             <li key="about" className="subHeader"><a href="#about">About me</a></li>
@@ -152,7 +153,7 @@ function App() {
           </ul>
         </div>
         <div id="content">
-          <a href="/cv.pdf" target="_blank">View my CV</a>
+          {/* <a href="/cv.pdf" target="_blank" className="button">View my CV</a> */}
 
           <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
           <p>I've been programming ever since I was eight years old. It's always been my "productive fun", especially in my Minecraft plugin era where I would playtest my plugins... and perhaps get carried away and beat the game. That's also why I first tried out game development, like my <a href={"#" + titleToID("Bouncer")}>Bouncer</a> VR game.</p>
