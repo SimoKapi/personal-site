@@ -142,27 +142,28 @@ function App() {
         <div id="nav">
           <ul className="dotted-bg-strong">
             <li key="header" className="header">Navigation</li>
+            <li key="about" className="subHeader"><a href="#about">About me</a></li>
             <li key="work" className="subHeader"><a href="#work">Work experience</a></li>
             {mapNavbar(work)}
             <li key="projects" className="subHeader"><a href="#projects">Projects</a></li>
             {mapNavbar(projects)}
-            <li key="about" className="subHeader"><a href="#about">About</a></li>
             <li key="contact" className="subHeader"><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div id="content">
           <a href="/cv.pdf" target="_blank">View my CV</a>
+
+          <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
+          <p>I was born in California and spent a large portion of my life programming. Ever since I was 8, I've been learning new languages, techniques and skills to allow me to develop applications and tools.</p>
+          <br></br>
+          <p>Currently 18 years old, I'm a High School student interested in a Computer Science / Software Development career.</p>
+
           <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
           {JsonEntryMap(work)}
 
           <CopyableHeader id="projects" className="subtitle">Projects</CopyableHeader>
           {/* <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1> */}
           {JsonEntryMap(projects)}
-
-          <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
-          <p>I was born in California and spent a large portion of my life programming. Ever since I was 8, I've been learning new languages, techniques and skills to allow me to develop applications and tools.</p>
-          <br></br>
-          <p>Currently 18 years old, I'm a High School student interested in a Computer Science / Software Development career.</p>
 
           <h1 className="subtitle" id="contact">Contact <a className="url" href="#contact">#</a></h1>
           <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
