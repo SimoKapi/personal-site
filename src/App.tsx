@@ -129,9 +129,9 @@ function App() {
             <span className="location"><p>{/* California native 🇺🇸 <br/> */}📍 Based in Prague, Czechia 🇨🇿</p></span>
           </div>
           <div id="socials">
-            <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
-            <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src={LinkedinLogo}/></a>
             <a href="https://simokapi.itch.io/" target="_blank"><img src={ItchioLogo}/></a>
+            <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src={LinkedinLogo}/></a>
+            <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
           </div>
         </div>
         <div className="images">
@@ -164,13 +164,14 @@ function App() {
           <CopyableHeader id="projects" className="subtitle">Projects</CopyableHeader>
           {/* <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1> */}
           {JsonEntryMap(projects)}
-
-          <h1 className="subtitle" id="contact">Contact <a className="url" href="#contact">#</a></h1>
-          <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
         </div>
         <div id="progress">
           
         </div>
+      </div>
+      <div id="footer">
+        <CopyableHeader id="contact" className='subtitle'>Contact</CopyableHeader>
+        <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
       </div>
     </>
   )
