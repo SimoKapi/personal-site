@@ -155,9 +155,7 @@ function App() {
           <a href="/cv.pdf" target="_blank">View my CV</a>
 
           <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
-          <p>I was born in California and spent a large portion of my life programming. Ever since I was 8, I've been learning new languages, techniques and skills to allow me to develop applications and tools.</p>
-          <br></br>
-          <p>Currently 18 years old, I'm a High School student interested in a Computer Science / Software Development career.</p>
+          <p>I've been programming ever since I was eight years old. It's always been my "productive fun", especially in my Minecraft plugin era where I would playtest my plugins... and perhaps get carried away and beat the game. Since 2024, I've been interested in bridging my passion for programming and development with health and biology, which is why I'd like to pursue a path in Biomedical Engineering. <br/> I'm currently 18 years old, a senior at Nový PORG in Prague.</p>
 
           <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
           {JsonEntryMap(work)}
