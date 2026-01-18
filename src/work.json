@@ -1,8 +1,8 @@
 [
     {
         "title": "Second Foundation",
-        "chips": ["Kotlin", "Angular"],
-        "body": "Currently a Junior Developer at the Prague branch. I develop systems automations for various teams, working as part of the Enterprise Resource Planning (ERP) team.",
+        "chips": ["Kotlin", "Angular", "Dagster", "Python", "ArgoCD", "Git"],
+        "body": "Currently a Junior Developer at the Prague branch. I develop systems automations for various teams, working as part of the Enterprise Resource Planning (ERP) team. \n I have experience with Dagster orchestration, production development, Jira task management and API endpoints.",
         "image": "/imgs/secfo.png"
     },
     {
