@@ -1,34 +1,48 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cursorImage from '../assets/cursor.png'
 
 import './ImageCycle.css'
+
+import Pause from '../assets/picture-pause.png';
 
 const imageModules = import.meta.glob('../assets/image_cycle/*.jpg', {eager: true})
 const images = Object.values(imageModules).map((mod: any) => mod.default);
 function ImageCycle() {
     const [imageIndex, setImageIndex] = useState(0);
-    const [phase, setPhase] = useState<'reveal' | 'carousel' | 'idle'>('reveal');
+    const [phase, setPhase] = useState<'reveal' | 'carousel' | 'idle' | 'prepare'>('reveal');
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        if (phase == 'idle' && !isHovered) {
+            const timer = setTimeout(() => setPhase('carousel'), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [phase, isHovered])
 
     const handlePhaseEnd = () => {
         if (phase == 'reveal') {
-            setPhase('carousel');
+            setPhase('idle')
         } else if (phase == 'carousel') {
+            setPhase('prepare');
             setImageIndex((prev) => (prev + 1) % images.length);
-            setPhase('idle');
+            // setPhase('idle');
 
-            setTimeout(() => setPhase('reveal'), 1000)
+            setTimeout(() => setPhase('reveal'), 100);
         }
     }
 
     return (
-        <div id="cursorAnimation">
+        <div id="cursorAnimation"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}>
+            <img src={Pause} id="pause-on-hover" draggable="false"/>
             <div id="imageSwap">
-                <img id="grayscaleImage" src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
-                <img id="nextImage" src={images[(imageIndex + 1) % images.length]} className={phase == 'carousel' ? 'run-carousel' : ''} onAnimationEnd={handlePhaseEnd}/>
+                <img id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
+                <img id="nextImage" draggable='false' src={images[(imageIndex + 1) % images.length]} className={phase == 'carousel' ? 'run-carousel' : ''} onAnimationEnd={handlePhaseEnd}/>
             </div>
-            <img id="imageReveal" src={images[imageIndex]} className={phase == 'reveal' ? 'run-reveal' : (phase == 'carousel' ? 'hidden' : 'visible')}/>
+            <img id="imageReveal" src={images[imageIndex]} draggable='false' className={phase == 'reveal' ? 'run-reveal' : (phase == 'carousel' || phase == 'prepare' ? 'fade' : '')}/>
             <div id="cursor" className={phase == 'reveal' ? 'run-cursor' : ''} onAnimationEnd={handlePhaseEnd}>
-                <img src={cursorImage}/>
+                <img src={cursorImage} draggable='false'/>
             </div>
         </div>
     )

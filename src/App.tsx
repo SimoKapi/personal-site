@@ -8,6 +8,7 @@ import ImageCycle from './utils/ImageCycle';
 import GithubLogo from './assets/logos/github-mark-white.png';
 import ItchioLogo from './assets/logos/itchio.png';
 import LinkedinLogo from './assets/logos/LI-In-Bug.png';
+import CallToAction from './assets/call-to-action.png';
 
 import projects from './projects.json';
 import work from './work.json';
@@ -133,6 +134,7 @@ function App() {
             <a href="https://simokapi.itch.io/" target="_blank"><img src={ItchioLogo}/></a>
             <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src={LinkedinLogo}/></a>
             <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
+            <img src={CallToAction} id="call-to-action" draggable="false"/>
           </div>
         </div>
         <div className="images">
