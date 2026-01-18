@@ -2,12 +2,22 @@
     --main: rgb(28, 28, 28);
     --contrast: rgb(65, 65, 65);
     --dark: rgb(24, 24, 24);
-    --light: rgb(41, 67, 76);
+    --subheader: rgb(41, 67, 76);
+    --textcolor: rgb(245, 245, 245);
     --accent: rgb(68, 146, 255);
     --panel: rgb(35, 35, 35);
-    --panel-head: rgb(89, 135, 199);
-    --border: rgb(50, 50, 50);
-    --gray: rgb(80, 80, 80);
+
+    --active: rgba(68, 146, 255, 0.2);
+}
+
+[data-theme='light'] {
+    --main: rgb(255, 255, 255);
+    --contrast: rgb(130, 130, 130);
+    --dark: rgb(235, 235, 235);
+    --subheader: rgb(136, 167, 176);
+    --textcolor: rgb(25, 25, 25);
+    --accent: rgb(68, 146, 255);
+    --panel: rgb(225, 225, 225);
 }
 
 html, body {
@@ -17,7 +27,7 @@ html, body {
     background-color: var(--main);
     font-family: sans-serif;
     scroll-behavior: smooth;
-    color:whitesmoke;
+    color:var(--textcolor);
     scroll-behavior: smooth;
 }
 

@@ -29,7 +29,7 @@
     width:100%;
     min-height: 100vh;
     background: var(--dark);
-    color:whitesmoke;
+    color:var(--textcolor);
     position:relative;
     display:flex;
     flex-direction: row;
@@ -56,8 +56,11 @@
     width:100px;
     height:50px;
     object-fit: contain;
-    filter: brightness(0) invert();
     pointer-events: none;
+}
+
+[data-theme='dark'] #call-to-action {
+    filter: brightness(0) invert();
 }
 
 #cover .info #socials a {
@@ -106,7 +109,7 @@
 }
 
 .dotted-bg-strong {
-  background-image: radial-gradient(var(--gray) 1px, transparent 0)!important;
+  background-image: radial-gradient(var(--contrast) 1px, transparent 0)!important;
   background-size: 30px 30px!important;
   background-position: -19px -19px!important;
   z-index:0;
@@ -132,7 +135,7 @@
     flex-direction: column;
     align-self: stretch;
     padding:50px 20px;
-    color:whitesmoke;
+    color:var(--textcolor);
     max-width:400px;
 }
 
@@ -164,25 +167,25 @@
 }
 
 #body #nav ul li.active {
-    background: rgba(68, 146, 255, 0.2);
+    background: var(--active);
 }
 
 #body #nav .header {
     background-color: var(--accent);
-    color: whitesmoke;
+    color: var(--textcolor);
     font-size:17px;
     font-weight: 700;
 }
 
 #body #nav .subHeader {
-    color:whitesmoke;
+    color:var(--textcolor);
     text-align: center;
-    background-color: var(--light);
+    background-color: var(--subheader);
     font-weight:700;
 }
 
 #body #nav .subHeader a {
-    color:whitesmoke;
+    color:var(--textcolor);
     text-decoration: none;
 }
 
@@ -304,6 +307,21 @@ a {
 
 .button:hover {
     text-decoration: underline;
+}
+
+#theme-toggle {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    width:30px;
+    height:30px;
+    border-radius:10px;
+    /* border:1px solid var(--contrast); */
+    z-index:1;
+}
+
+[data-theme='dark'] #theme-toggle {
+    filter: brightness(0) invert();
 }
 
 @media screen and (max-width: 768px) {

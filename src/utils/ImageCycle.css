@@ -15,8 +15,11 @@
     width:150px;
     height:75px;
     object-fit: contain;
-    filter: brightness(0) invert();
     pointer-events: none;
+}
+
+[data-theme='dark'] #pause-on-hover {
+    filter: brightness(0) invert();
 }
 
 #cursor {
@@ -27,9 +30,12 @@
     left:50%;
 }
 
+[data-theme='dark'] #cursor {
+    filter: brightness(0) invert();
+}
+
 #cursor img {
     width:100%;
-    filter: brightness(0) invert(1);
 }
 
 #imageReveal, #grayscaleImage, #nextImage {

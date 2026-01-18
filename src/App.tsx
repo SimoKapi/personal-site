@@ -5,10 +5,12 @@ import remarkBreaks from "remark-breaks";
 import './App.css'
 
 import ImageCycle from './utils/ImageCycle';
-import GithubLogo from './assets/logos/github-mark-white.png';
+import GithubLogo_dark from './assets/logos/github-mark-white.png';
+import GithubLogo_light from './assets/logos/github-mark.png';
 import ItchioLogo from './assets/logos/itchio.png';
 import LinkedinLogo from './assets/logos/LI-In-Bug.png';
 import CallToAction from './assets/call-to-action.png';
+import DarkLight from './assets/dark-light.png';
 
 import projects from './projects.json';
 import work from './work.json';
@@ -24,6 +26,7 @@ interface Entry {
 
 function App() {
   const caretRef = useRef<HTMLSpanElement>(null);
+  const [githubLogo, setGithubLogo] = useState(GithubLogo_dark);
 
   useEffect(() => {
     let isToggled = true;
@@ -108,6 +111,7 @@ function App() {
   }
 
   useEffect(() => {
+    loadTheme();
     const hash = window.location.hash;
     if (hash) {
       const id = hash.substring(1);
@@ -121,8 +125,49 @@ function App() {
     }
   }, [])
 
+  function getCookie(cname: string): string {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookie.split(";");
+    for (let i = 0; i < cookieArray.length; i++) {
+      let c = cookieArray[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function loadTheme() {
+    let theme = getCookie('theme');
+    if (theme) {
+      setTheme(theme)
+    } else {
+      document.cookie = "theme=dark";
+      setTheme('dark')
+    }
+  }
+
+  function setTheme(theme: string) {
+    document.body.setAttribute('data-theme', theme);
+    document.cookie = "theme=" + theme
+    setGithubLogo(theme == 'dark' ? GithubLogo_dark : GithubLogo_light);
+  }
+
+  function toggleTheme() {
+    let currentTheme = getCookie('theme');
+    setTheme(currentTheme == 'dark' ? 'light' : 'dark')
+    console.log(document.cookie)
+  }
+
   return (
     <>
+      <button id="theme-toggle" onClick={() => toggleTheme()}>
+        <img src={DarkLight}/>
+      </button>
       <div id="cover" className="dotted-bg">
         <div className="info">
           <div id="name">
@@ -133,7 +178,7 @@ function App() {
           <div id="socials">
             <a href="https://simokapi.itch.io/" target="_blank"><img src={ItchioLogo}/></a>
             <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src={LinkedinLogo}/></a>
-            <a href="https://github.com/simokapi" target="_blank"><img src={GithubLogo}/></a>
+            <a href="https://github.com/simokapi" target="_blank"><img src={githubLogo}/></a>
             <img src={CallToAction} id="call-to-action" draggable="false"/>
           </div>
         </div>
