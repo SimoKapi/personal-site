@@ -218,6 +218,12 @@
     margin-left:.5ch;
     transition: 0.15s ease-in-out;
     font-weight:700;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .title:hover .url {
