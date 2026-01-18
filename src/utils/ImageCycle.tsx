@@ -30,7 +30,7 @@ function ImageCycle() {
         }
     }
 
-    function handleMouseEvent(callback: function) {
+    function handleMouseEvent(callback: () => void) {
         if (window.matchMedia('(hover: hover)').matches) {
             callback();
         }
@@ -38,8 +38,8 @@ function ImageCycle() {
 
     return (
         <div id="cursorAnimation"
-            onMouseEnter={() => handleMouseEvent(setIsHovered(true))}
-            onMouseLeave={() => handleMouseEvent(setIsHovered(false))}>
+            onMouseEnter={() => handleMouseEvent(() => setIsHovered(true))}
+            onMouseLeave={() => handleMouseEvent(() => setIsHovered(false))}>
             <img src={Pause} id="pause-on-hover" draggable="false"/>
             <div id="imageSwap">
                 <img id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
