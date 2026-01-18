@@ -14,7 +14,7 @@
     {
         "title": "Freelance web development",
         "chips": ["HTML", "CSS", "JavaScript", "React", "Angular"],
-        "body": "Over the years, I've created a few websites for various clients. My style ranges from pure HTML/CSS/JS to using advanced frameworks like React or Angular. \n Feel free to reach out with business inquiries at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)!",
+        "body": "Over the years, I've created a few websites for various clients. My style ranges from pure HTML/CSS/JS to using advanced frameworks like React or Angular. \n Some notable examples are: [bouldernaplani.cz](https://bouldernaplani.cz) and [studentshorts.com](https://studentshorts.com). \n Feel free to reach out with business inquiries at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)!",
         "image": "/imgs/index.html.png"
     }
 ]
