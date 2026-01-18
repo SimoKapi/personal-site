@@ -3,7 +3,7 @@
         "title": "VAD (heart pump) telemetry system",
         "chips": ["NodeJS", "Bootstrap"],
         "body": "This project was designed and prototyped during the 2025 European Health Hackaton. It allows for real-time data extraction from Ventricular Assist Devices (heart pumps) that do not have data streaming capabilities, uploading the necessary data to specific internal hospital systems. This is done mainly for older VADs, as those were not originally designed with systems integration in mind. The device saves countless hours of work for nurses, as it eliminates the need for periodic manual checks and facilitates real-time data analysis and monitoring. \n As the VADs have no data output, Optical Character Recognition (OCR) was used to extract data using a Raspberry Pi Camera Module, mounted on a Raspberry Pi. The mount was designed to be adjustable, so that the camera could be fully positioned and oriented at the screen. Due to glare and unwanted features on the display, color thresholding, contrast boosting, and other pre-processing filters had to be applied for maximal OCR efficiency. On top of that, perspective warp was introduced to straighten the given frame and allow for a much cleaner data extraction using the OCR pipeline. \n The extracted results are then displayed on a website run locally on the RaspberryPi, as well as constantly outputted via a webhook.",
-        "image": "/imgs/hackhealth2025.jpg"
+        "image": "/imgs/hackhealth2025-product.jpg"
     },
     {
         "title": "Java Rasterizer",
