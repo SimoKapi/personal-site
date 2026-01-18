@@ -141,7 +141,7 @@
 }
 
 .fade {
-    animation: fade 0.6s forwards;
+    animation: fade 0.4s forwards;
 }
 
 @media screen and (max-width: 768px) {
