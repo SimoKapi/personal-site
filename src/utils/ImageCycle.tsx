@@ -25,16 +25,21 @@ function ImageCycle() {
         } else if (phase == 'carousel') {
             setPhase('prepare');
             setImageIndex((prev) => (prev + 1) % images.length);
-            // setPhase('idle');
 
             setTimeout(() => setPhase('reveal'), 100);
         }
     }
 
+    function handleMouseEvent(callback: function) {
+        if (window.matchMedia('(hover: hover)').matches) {
+            callback();
+        }
+    }
+
     return (
         <div id="cursorAnimation"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}>
+            onMouseEnter={() => handleMouseEvent(setIsHovered(true))}
+            onMouseLeave={() => handleMouseEvent(setIsHovered(false))}>
             <img src={Pause} id="pause-on-hover" draggable="false"/>
             <div id="imageSwap">
                 <img id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
