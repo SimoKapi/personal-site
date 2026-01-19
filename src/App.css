@@ -22,7 +22,7 @@
     border-radius: 50px;
     user-select: none;
     height:max-content;
-    filter: drop-shadow(0px 0px 3px var(--accent));
+    transition: 0.15s ease-in-out;
 }
 
 #cover {
@@ -317,6 +317,12 @@
 
 [data-theme='dark'] #theme-toggle {
     filter: brightness(0) invert();
+}
+
+@media screen and (min-width:769px) {
+    .chip:hover {
+        border: 1px solid var(--accent);
+    }
 }
 
 @media screen and (max-width: 768px) {
