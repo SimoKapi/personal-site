@@ -264,11 +264,6 @@
     flex:3;
 }
 
-a {
-    color: var(--accent);
-    text-decoration: underline;
-}
-
 .subtitle {
     font-size:40px;
     font-weight: 600;

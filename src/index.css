@@ -6,6 +6,7 @@
     --textcolor: rgb(245, 245, 245);
     --accent: rgb(68, 146, 255);
     --panel: rgb(35, 35, 35);
+    --url: rgb(150, 179, 246);
 
     --active: rgba(68, 146, 255, 0.2);
 }
@@ -14,10 +15,11 @@
     --main: rgb(255, 255, 255);
     --contrast: rgb(130, 130, 130);
     --dark: rgb(235, 235, 235);
-    --subheader: rgb(136, 167, 176);
+    --subheader: rgb(147, 157, 181);
     --textcolor: rgb(25, 25, 25);
-    --accent: rgb(68, 146, 255);
+    --accent: rgb(137, 186, 255);
     --panel: rgb(225, 225, 225);
+    --url: rgb(66, 120, 245);
 }
 
 html, body {
@@ -33,4 +35,15 @@ html, body {
 
 * {
     box-sizing: border-box;
+}
+
+a {
+    color: var(--url);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    position:relative;
+}
+
+a:hover {
+    text-decoration: underline;
 }
