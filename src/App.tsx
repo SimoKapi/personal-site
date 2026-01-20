@@ -95,7 +95,7 @@ function App() {
                 </div>
                 <div className="info" style={{ whiteSpace: 'pre-wrap' }}>
                   {entry.images && entry.images.map((img) => {
-                    return (<img className="coverImage" src={entry.images}/>)
+                    return (<img className="coverImage" src={img}/>)
                   })
                   }
                   <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
