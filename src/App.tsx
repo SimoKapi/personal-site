@@ -20,7 +20,7 @@ import CopyableHeader from './CopyableHeader';
 interface Entry {
     title: string;
     chips: string[];
-    image?: string;
+    images: string[];
     body: string;
 }
 
@@ -94,8 +94,9 @@ function App() {
                   </div>
                 </div>
                 <div className="info" style={{ whiteSpace: 'pre-wrap' }}>
-                  {entry.image &&
-                    <img className="coverImage" src={entry.image}/>
+                  {entry.images && entry.images.map((img) => {
+                    return (<img className="coverImage" src={entry.images}/>)
+                  })
                   }
                   <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
                     a: ({node, ...props}) => {

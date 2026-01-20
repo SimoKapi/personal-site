@@ -3,18 +3,18 @@
         "title": "Second Foundation",
         "chips": ["Kotlin", "Angular"],
         "body": "Currently a Junior Developer at the Prague branch of [Second Foundation Tech](https://second-foundation.eu). I develop systems automations for various teams, working as part of the Enterprise Resource Planning (ERP) team. \n I have experience with Dagster orchestration, production development, Jira task management and API endpoints.",
-        "image": "/imgs/secfo.png"
+        "images": ["/imgs/secfo.png"]
     },
     {
         "title": "Czech Academy of Sciences",
         "chips": ["Python", "PyTorch", "HuggingFace"],
         "body": "In December 2025, I concluded my year-long internship at the [Institute for Theory and Automation at the Czech Academy of Sciences](https://utia.cas.cz). Here, I applied image segmentation using the semantic transformer called `SegFormer MiT-b0`, developed by NVIDIA, to extract river data from lithographic digital map scans. \n Due to limited amounts of data, we couldn't train the model directly on the map scans, which is why we opted to use transfer learning. This is a method that allows models to be trained on datasets with similar geometries and strucure, dialing in the proper weights and model parameters, before being fine-tuned on a limited real dataset. This saved us a lot of time in data annotation, as we could utilize an open source dataset for segmenting cracks in concrete.",
-        "image": "/imgs/cas.jpg"
+        "images": ["/imgs/cas.jpg"]
     },
     {
         "title": "Freelance web development",
         "chips": ["HTML", "CSS", "JavaScript", "React", "Angular"],
         "body": "Over the years, I've created a few websites for various clients. My style ranges from pure HTML/CSS/JS to using advanced frameworks like React or Angular. \n Some notable examples are: [bouldernaplani.cz](https://bouldernaplani.cz) and [studentshorts.com](https://studentshorts.com). \n Feel free to reach out with business inquiries at [simon.kapicka@gmail.com](mailto:simon.kapicka@gmail.com)!",
-        "image": "/imgs/index.html.png"
+        "images": ["/imgs/index.html.png"]
     }
 ]
