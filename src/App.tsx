@@ -11,7 +11,6 @@ import ItchioLogo from './assets/logos/itchio.png';
 import LinkedinLogo from './assets/logos/LI-In-Bug.png';
 import CallToAction from './assets/call-to-action.png';
 import DarkLight from './assets/dark-light.png';
-
 import projects from './projects.json';
 import work from './work.json';
 
@@ -22,6 +21,7 @@ interface Entry {
     chips: string[];
     images: string[];
     body: string;
+    construction?: boolean;
 }
 
 function App() {
@@ -96,8 +96,12 @@ function App() {
                 <div className="info" style={{ whiteSpace: 'pre-wrap' }}>
                   {entry.images && entry.images.map((img) => {
                     return (<img className="coverImage" src={img}/>)
-                  })
-                  }
+                  })}
+                  {entry.construction && 
+                  <>
+                  <div className="construction1"/>
+                  <div className="construction2"/>
+                  </>}
                   <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
                     a: ({node, ...props}) => {
                       return(<a target="_blank" {...props}/>)

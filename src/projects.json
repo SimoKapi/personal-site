@@ -2,8 +2,9 @@
     {
         "title": "Eyboard",
         "chips": ["Python", "OpenCV", "Mediapipe"],
-        "body": "## **In development** \n I've recently been thinking a lot about the concept of having a virtual keyboard — for when I want to type away whilst lying down, eyes closed, with my hands just floating in the air. That's why I started developing Eyboard, a project that aims to act as the foundation of exactly that. Using Google's Mediapipe, a collection of pretrained models, I detect the user's fingertips and create a virtual keyboard from them. \n This project is still in the development phase, and there are several features I have to fine-tune as well as implement. \n Follow the updates on [GitHub](https://github.com/SimoKapi/eyboard)!",
-        "images": ["/imgs/eyboard.jpeg"]
+        "body": "I've recently been thinking a lot about the concept of having a virtual keyboard — for when I want to type away whilst lying down, eyes closed, with my hands just floating in the air. That's why I started developing Eyboard, a project that aims to act as the foundation of exactly that. Using Google's Mediapipe, a collection of pretrained models, I detect the user's fingertips and create a virtual keyboard from them. \n This project is still in the development phase, and there are several features I have to fine-tune as well as implement. \n Follow the updates on [GitHub](https://github.com/SimoKapi/eyboard)!",
+        "images": ["/imgs/eyboard.jpeg"],
+        "construction": true
     },
     {
         "title": "VAD telemetry system",
