@@ -237,7 +237,6 @@
     display:flex;
     flex-direction: column;
     box-shadow:0px 1px 10px black;
-    padding:2ch;
     border-radius:10px;
 }
 
@@ -245,9 +244,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x:hidden;
 }
 
 #body #content .project .info p {
+    padding:2ch;
     width:100%;
 }
 
@@ -260,11 +261,11 @@
 }
 
 .construction1 {
-    transform:rotate(3.5deg) translateY(-50px);
+    transform:rotate(3.5deg) translateY(-50px) scale(1.1);
 }
 
 .construction2 {
-    transform:rotate(-3.5deg) translateY(-50px);
+    transform:rotate(-3.5deg) translateY(-50px) scale(1.1);
 }
 
 #body #content .project .info .coverImage {
