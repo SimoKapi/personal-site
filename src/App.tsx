@@ -21,6 +21,7 @@ interface Entry {
     chips: string[];
     images: string[];
     body: string;
+    more?: string;
     construction?: boolean;
 }
 
@@ -107,6 +108,9 @@ function App() {
                       return(<a target="_blank" {...props}/>)
                     }
                   }}>{entry.body}</ReactMarkdown>
+                  {entry.more &&
+                    <a href={entry.more} className="projectRedirect">Learn more!</a>
+                  }
                 </div>
               </div>
             )

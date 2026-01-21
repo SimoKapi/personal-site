@@ -246,6 +246,7 @@
     flex-direction: column;
     align-items: center;
     overflow-x:hidden;
+    padding-bottom:2ch;
 }
 
 #body #content .project .info p {
@@ -320,6 +321,22 @@
 
 .button:hover {
     text-decoration: underline;
+}
+
+.projectRedirect {
+    background-color: var(--active);
+    color: var(--textcolor);
+    text-align: center;
+    margin:0;
+    padding:1ch;
+    border-radius:10px;
+    border:1px solid var(--accent);
+    text-decoration: none;
+}
+
+.projectRedirect:hover {
+    text-decoration: none;
+    background-color: var(--accent);
 }
 
 #theme-toggle {

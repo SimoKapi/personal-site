@@ -4,36 +4,42 @@
         "chips": ["Python", "OpenCV", "Mediapipe"],
         "body": "I've recently been thinking a lot about the concept of having a virtual keyboard — for when I want to type away whilst lying down, eyes closed, with my hands just floating in the air. That's why I started developing Eyboard, a project that aims to act as the foundation of exactly that. Using Google's Mediapipe, a collection of pretrained models, I detect the user's fingertips and create a virtual keyboard from them. \n This project is still in the development phase, and there are several features I have to fine-tune as well as implement. \n Follow the updates on [GitHub](https://github.com/SimoKapi/eyboard)!",
         "images": ["/imgs/eyboard.jpeg"],
+        "more": "",
         "construction": true
     },
     {
         "title": "VAD telemetry system",
         "chips": ["NodeJS", "Bootstrap", "3D Design"],
         "body": "This project was designed and prototyped during the 2025 European Health Hackaton. It allows for real-time data extraction from Ventricular Assist Devices (heart pumps) that do not have data streaming capabilities, uploading the necessary data to specific internal hospital systems. This is done mainly for older VADs, as those were not originally designed with systems integration in mind. The device saves countless hours of work for nurses, as it eliminates the need for periodic manual checks and facilitates real-time data analysis and monitoring. \n As the VADs have no data output, Optical Character Recognition (OCR) was used to extract data using a Raspberry Pi Camera Module, mounted on a Raspberry Pi. The mount was designed to be adjustable, so that the camera could be fully positioned and oriented at the screen. Due to glare and unwanted features on the display, color thresholding, contrast boosting, and other pre-processing filters had to be applied for maximal OCR efficiency. On top of that, perspective warp was introduced to straighten the given frame and allow for a much cleaner data extraction using the OCR pipeline. \n The extracted results are then displayed on a website run locally on the RaspberryPi, as well as constantly outputted via a webhook. \n The code can be found on my [GitHub](https://github.com/SimoKapi/hackhealth2025).",
-        "images": ["/imgs/hackhealth2025-product.jpg"]
+        "images": ["/imgs/hackhealth2025-product.jpg"],
+        "more": ""
     },
     {
         "title": "Java Rasterizer",
         "chips": ["Java"],
         "body": "A 3D renderer implemented fully using plain Java, defining all the projection and spatial transformation calculations myself. Only standard Java libraries for mathematical calculation were used, as well as JFrame for data rendering. \n I built this project to learn more about vector math and matrix multiplication, as they were needed to compute the various perpective transformation matrices and relative camera positioning. \n The positioning is done by computing the position of the environment relative to the camera and applying rotational transformations to that computed form. Because this project did not implement any shading whatsoever, I assigned each face a random color to convey depth, since it looks flat otherwise. \n I also implemented backface culling, only rendering the faces oriented towards the camera. This is a technique commonly used in most rendering engines, as it prevents unnecessary faces from being rendered and using up memory. In a solid object, where all sides are covered and there are no un-faced gaps, each face that isn't facing the camera is obscured by a different camera-facing face, therefore it doesn't have to be rendered. On average, this eliminates roughly half (~50%) of unnecessary renders, saving time and computational power. \n __Fun Fact:__ did you know that if you treat degrees as radians in calculations, the whole render gets broken? \n The code takes an ASCII-encoded `.stl` file as input. It can be found on my [GitHub](https://github.com/SimoKapi/Renderer).",
-        "images": ["/imgs/renderer.png"]
+        "images": ["/imgs/renderer.png"],
+        "more": "g"
     },
     {
         "title": "PlantIdentifier",
         "chips": ["Python", "TypeScript"],
         "body": "I created this project after receiving a homework assignment in my Biology class. Of course, like any other programmer, I decided to spend several hours automating it instead of doing it in under two hours manually. It's a phylogenetic tree generator for an input of plant species, defined in latin. \n Using REST API requests for the [gbif.org](https://gbif.org) public API, the program retrieves information about those species and then displays them on a canvas-drawn tree. A recursive algorithm had to be implemented to allow for scalable result transformation and a conversion into the final displayable output. The program runs on [plants.simokapi.com](https://plants.simokapi.com).",
-        "images": ["/imgs/PlantIdentifier.png"]
+        "images": ["/imgs/PlantIdentifier.png"],
+        "more": ""
     },
     {
         "title": "DropStorage",
         "chips": ["BunJS", "JavaScript", "TypeScript", "HTML", "CSS", "Postgres"],
         "body": "One day, I thought to myself \"Wouldn't it be nice to have my own cloud storage service?\". And so I utilized this server to create one — running a BunJS backend that provides REST API endpoints, it includes secure and encrypted user authentication. \n There was a lot of tinkering to get it all working, but it includes all the vital features of a cloud storage system, including: moving files, creating directories, deleting directories and files, and uploads/downloads. \n The project runs on on [storage.simokapi.com](https://storage.simokapi.com) and is usually avaiable for registration.",
-        "images": ["/imgs/dropstorage.png"]
+        "images": ["/imgs/dropstorage.png"],
+        "more": ""
     },
     {
         "title": "Bouncer",
         "chips": ["Unity Engine", "C#"],
         "body": "This was my first finished VR game. The vision was sort of like an immersive, virtual reality Geometry Dash. The goal is to bounce a single ball in each shoebox-sized level into the finish zone, avoiding walls and deadly obstacles. \n I once randomly got the idea for the player inserting their hands into two hand-sized openings of a box, and being locked in until the level is beat. I implemented a similar approach in this game, even though the holes are freely accessable at any point. \n The game can be found on the [Meta Quest AppLab](https://www.meta.com/experiences/25998350426422873/). \n As of January 2026, the game has over 1000 lifetime installs.",
-        "images": ["/imgs/bouncervr.png"]
+        "images": ["/imgs/bouncervr.png"],
+        "more": ""
     }
 ]
