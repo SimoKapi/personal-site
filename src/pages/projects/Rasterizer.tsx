@@ -56,7 +56,7 @@ function Rasterizer() {
           <p>The projection of point <InlineMath math='P = (P_x, P_y, P_z)'/> onto a screen positioned at <InlineMath math='E = (E_x, E_y, E_z)'/> relative to the camera can be visualized on a right triangle below, viewed from the side. This gives the projected <InlineMath math='y'/> coordinate, and the same visualization can be used to obtain the projected <InlineMath math='x'/> coordinate.</p>
           <p>The two similar triangles created both start in the origin <InlineMath math='O'/>, and stretch out to either the <InlineMath math='y'/> point or the <InlineMath math='P_y'/> point. Because they are similar, the ratios of their side lengths must remain the same; thus, <InlineMath math='\frac{P_z}{P_y} = \frac{E_z}{Ey}'/></p>
           <p>We can use this similarity to find the distance <InlineMath math='|Ey| = E_z \cdot \frac{P_z}{P_y}'/></p>
-          <img src={Projection} className="w-1/2 m-auto invert-on-dark pb-2"/>
+          <img src={Projection} className="project-img m-auto invert-on-dark pb-2"/>
           <p>The same approach can be taken on a different axis to find <InlineMath math='|Ex| = E_z \cdot \frac{P_z}{P_x}'/></p>
 
           <h2 className="subsubheader-project">Backface culling</h2>
