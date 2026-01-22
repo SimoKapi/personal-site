@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkBreaks from "remark-breaks";
 
 import Cover from '../utils/Cover';
+import Construction from '../utils/Construction';
 
 import projects from '../projects.json';
 import work from '../work.json';
@@ -32,11 +33,7 @@ function Main({activeID}: {activeID: string}) {
                     {entry.images && entry.images.map((img:string) => {
                     return (<img className="coverImage" src={img}/>)
                     })}
-                    {entry.construction && 
-                    <>
-                    <div className="construction1"/>
-                    <div className="construction2"/>
-                    </>}
+                    {entry.construction && <Construction/>}
                     <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
                     a: ({node, ...props}) => {
                         return(<a target="_blank" {...props}/>)

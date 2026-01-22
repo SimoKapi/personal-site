@@ -14,6 +14,7 @@ import Footer from './utils/Footer';
 
 // Projects
 import Rasterizer from './pages/projects/Rasterizer';
+import Eyboard from './pages/projects/Eyboard';
 
 export interface Entry {
     title: string;
@@ -133,6 +134,7 @@ function App() {
         <Route path="/" element={<Main activeID={activeID}/>} />
         <Route path="/projects" element={<Projects/>}>
           <Route path="rasterizer" element={<Rasterizer/>} />
+          <Route path="eyboard" element={<Eyboard/>} />
         </Route>
       </Routes>
       <Footer/>
