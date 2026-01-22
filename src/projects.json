@@ -17,9 +17,9 @@
     {
         "title": "Java Rasterizer",
         "chips": ["Java"],
-        "body": "A 3D renderer implemented fully using plain Java, defining all the projection and spatial transformation calculations myself. Only standard Java libraries for mathematical calculation were used, as well as JFrame for data rendering. \n I built this project to learn more about vector math and matrix multiplication, as they were needed to compute the various perpective transformation matrices and relative camera positioning. \n The positioning is done by computing the position of the environment relative to the camera and applying rotational transformations to that computed form. Because this project did not implement any shading whatsoever, I assigned each face a random color to convey depth, since it looks flat otherwise. \n I also implemented backface culling, only rendering the faces oriented towards the camera. This is a technique commonly used in most rendering engines, as it prevents unnecessary faces from being rendered and using up memory. In a solid object, where all sides are covered and there are no un-faced gaps, each face that isn't facing the camera is obscured by a different camera-facing face, therefore it doesn't have to be rendered. On average, this eliminates roughly half (~50%) of unnecessary renders, saving time and computational power. \n __Fun Fact:__ did you know that if you treat degrees as radians in calculations, the whole render gets broken? \n The code takes an ASCII-encoded `.stl` file as input. It can be found on my [GitHub](https://github.com/SimoKapi/Renderer).",
+        "body": "A 3D renderer implemented fully using plain Java, defining all the projection and spatial transformation calculations myself. Only standard Java libraries for mathematical calculation were used, as well as JFrame for data rendering. \n The code takes an ASCII-encoded `.stl` file as input. It can be found on my [GitHub](https://github.com/SimoKapi/Renderer).",
         "images": ["/imgs/renderer.png"],
-        "more": ""
+        "more": "rasterizer"
     },
     {
         "title": "PlantIdentifier",

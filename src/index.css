@@ -9,6 +9,8 @@
     --url: rgb(150, 179, 246);
 
     --active: rgba(68, 146, 255, 0.2);
+    --chip: var(--color-blue-100);
+    --chip-text: rgb(0, 0, 0);
 }
 
 [data-theme='light'] {
@@ -41,7 +43,7 @@ a {
     color: var(--url);
     text-decoration: none;
     transition: 0.2s ease-in-out;
-    position:relative;
+    /* position:relative; */
 }
 
 a:hover {

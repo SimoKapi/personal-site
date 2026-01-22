@@ -1,22 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkBreaks from "remark-breaks";
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import ScrollToTop from './utils/ScrollToTop';
 
 import './App.css'
 
-import ImageCycle from './utils/ImageCycle';
 import GithubLogo_dark from './assets/logos/github-mark-white.png';
 import GithubLogo_light from './assets/logos/github-mark.png';
-import ItchioLogo from './assets/logos/itchio.png';
-import LinkedinLogo from './assets/logos/LI-In-Bug.png';
-import CallToAction from './assets/call-to-action.png';
 import DarkLight from './assets/dark-light.png';
-import projects from './projects.json';
-import work from './work.json';
 
-import CopyableHeader from './CopyableHeader';
+import Projects from './pages/Projects';
+import Main from './pages/Main';
+import Footer from './utils/Footer';
 
-interface Entry {
+// Projects
+import Rasterizer from './pages/projects/Rasterizer';
+
+export interface Entry {
     title: string;
     chips: string[];
     images: string[];
@@ -25,26 +24,26 @@ interface Entry {
     construction?: boolean;
 }
 
+export function titleToID(title: string) {
+  return encodeURIComponent(title)
+}
+
+export function mapNavbar(file: Entry[], activeID: string) {
+  return (file.map((entry) => {
+    return (<li className={activeID == titleToID(entry.title) ? 'active' : ''} key={titleToID(entry.title)}><a href={"#" + titleToID(entry.title)}>{entry.title}</a></li>)
+  }))
+}
+
+let githubLogo = GithubLogo_dark
+export function getGithubLogo() {
+  return githubLogo
+}
+
+function setGithubLogo(logo: any) {
+  githubLogo = logo
+}
+
 function App() {
-  const caretRef = useRef<HTMLSpanElement>(null);
-  const [githubLogo, setGithubLogo] = useState(GithubLogo_dark);
-
-  useEffect(() => {
-    let isToggled = true;
-    const interval = setInterval(() => {
-      if (caretRef.current) {
-        if (isToggled) {
-          caretRef.current.style.opacity = "1";
-        } else {
-          caretRef.current.style.opacity = "0";
-        }
-      }
-      isToggled = !isToggled;
-    }, 600)
-
-    return () => clearInterval(interval);
-  }, [])
-
   const [activeID, setActiveID] = useState("");
 
   useEffect(() => {
@@ -69,55 +68,6 @@ function App() {
 
     return() => observer.disconnect();
   })
-
-  function titleToID(title: string) {
-    return encodeURIComponent(title)
-  }
-
-  function mapNavbar(file: Entry[]) {
-    return (file.map((entry) => {
-      return (<li className={activeID == titleToID(entry.title) ? 'active' : ''} key={titleToID(entry.title)}><a href={"#" + titleToID(entry.title)}>{entry.title}</a></li>)
-    }))
-  }
-
-  function JsonEntryMap(source: Entry[]) {
-    return (
-        <>
-            {source.map((entry) => {
-            return (
-              <div id={titleToID(entry.title)} className="project">
-                <div className="header">
-                  <CopyableHeader className="title" id={titleToID(entry.title)}>{entry.title}</CopyableHeader>
-                  <div className="chips">
-                    {entry.chips.map((chip:string) => {
-                      return (<span className="chip">{chip}</span>)
-                    })}
-                  </div>
-                </div>
-                <div className="info" style={{ whiteSpace: 'pre-wrap' }}>
-                  {entry.images && entry.images.map((img) => {
-                    return (<img className="coverImage" src={img}/>)
-                  })}
-                  {entry.construction && 
-                  <>
-                  <div className="construction1"/>
-                  <div className="construction2"/>
-                  </>}
-                  <ReactMarkdown remarkPlugins={[remarkBreaks]} components={{
-                    a: ({node, ...props}) => {
-                      return(<a target="_blank" {...props}/>)
-                    }
-                  }}>{entry.body}</ReactMarkdown>
-                  {entry.more &&
-                    <a href={entry.more} className="projectRedirect">Learn more!</a>
-                  }
-                </div>
-              </div>
-            )
-          })}
-        </>
-    )
-  }
 
   useEffect(() => {
     loadTheme();
@@ -173,73 +123,20 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
+      <ScrollToTop/>
       <button id="theme-toggle" onClick={() => toggleTheme()}>
         <img src={DarkLight}/>
       </button>
-      <div id="cover" className="dotted-bg">
-        <div className="info">
-          <div id="name">
-            <h1>Simon</h1>
-            <h1>Kapicka<span ref={caretRef}>_</span></h1>
-            <span className="location"><p>{/* California native 🇺🇸 <br/> */}📍 Based in Prague, Czechia 🇨🇿</p></span>
-          </div>
-          <div id="socials">
-            <a href="https://simokapi.itch.io/" target="_blank"><img src={ItchioLogo}/></a>
-            <a href="https://www.linkedin.com/in/simon-kapicka-95254b293/" target="_blank"><img src={LinkedinLogo}/></a>
-            <a href="https://github.com/simokapi" target="_blank"><img src={githubLogo}/></a>
-            <img src={CallToAction} id="call-to-action" draggable="false"/>
-          </div>
-        </div>
-        <div className="images">
-          <ImageCycle/>
-        </div>
-      </div>
-      <div id="body">
-        <div id="nav">
-          <a href="/cv.pdf" target="_blank" className="button w-full">View my CV</a>
-          <ul className="dotted-bg-strong">
-            <li key="header" className="header">Navigation</li>
-            <li key="apps" className="subHeader"><a href="#apps">App quicklinks</a></li>
-            <li key="about" className="subHeader"><a href="#about">About me</a></li>
-            <li key="work" className="subHeader"><a href="#work">Work experience</a></li>
-            {mapNavbar(work)}
-            <li key="projects" className="subHeader"><a href="#projects">Projects</a></li>
-            {mapNavbar(projects)}
-            <li key="contact" className="subHeader"><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div id="content">
-          {/* <a href="/cv.pdf" target="_blank" className="button">View my CV</a> */}
-          <CopyableHeader id="apps" className="subtitle">App quicklinks</CopyableHeader>
-          <div className="flex gap-5">
-            <a href="https://plants.simokapi.com" target="_blank" className="button w-full">PlantIdentifier</a>
-            <a href="https://storage.simokapi.com" target="_blank" className="button w-full">Dropstorage</a>
-          </div>
-
-          <h1 className="subtitle" id="about">About me <a className="url" href="#about">#</a></h1>
-          <p>I've been programming ever since I was eight years old. It's always been my "productive fun", especially in my Minecraft plugin era where I would playtest my plugins... and perhaps get carried away and beat the game. That's also why I first tried out game development, like my <a href={"#" + titleToID("Bouncer")}>Bouncer</a> VR game.</p>
-          <br/>
-          <p>Since 2024, I've been interested in bridging my passion for programming and development with health and biology, which is why I'd like to pursue a path in Biomedical Engineering. Check out my cool related <a href={"#" + titleToID("VAD (heart pump) telemetry system")}>VAD telemetry system</a> project!</p>
-          <br/>
-          <p>I'm currently 18 years old, a high school senior at Nový PORG in Prague.</p>
-
-          <CopyableHeader id="work" className="subtitle">Work Experience</CopyableHeader>
-          {JsonEntryMap(work)}
-
-          <CopyableHeader id="projects" className="subtitle">Projects</CopyableHeader>
-          {/* <h1 className="subtitle" id="projects">Projects <a className="url" href="#projects">#</a></h1> */}
-          {JsonEntryMap(projects)}
-          <CopyableHeader id="contact" className='subtitle'>Contact</CopyableHeader>
-          <p>Feel free to contact me at <a href="mailto:simon.kapicka@gmail.com">simon.kapicka@gmail.com</a></p>
-        </div>
-        <div id="progress">
-          
-        </div>
-      </div>
-      <div id="footer">
-      </div>
-    </>
+      <Routes>
+        <Route path="*" element={<Navigate replace to="/" />} />
+        <Route path="/" element={<Main activeID={activeID}/>} />
+        <Route path="/projects" element={<Projects/>}>
+          <Route path="rasterizer" element={<Rasterizer/>} />
+        </Route>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
   )
 }
 

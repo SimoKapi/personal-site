@@ -40,14 +40,14 @@ function ImageCycle() {
         <div id="cursorAnimation"
             onMouseEnter={() => handleMouseEvent(() => setIsHovered(true))}
             onMouseLeave={() => handleMouseEvent(() => setIsHovered(false))}>
-            <img src={Pause} id="pause-on-hover" draggable="false"/>
+            <img src={Pause} id="pause-on-hover" className="invert-on-dark" draggable="false"/>
             <div id="imageSwap">
                 <img id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
                 <img id="nextImage" draggable='false' src={images[(imageIndex + 1) % images.length]} className={phase == 'carousel' ? 'run-carousel' : ''} onAnimationEnd={handlePhaseEnd}/>
             </div>
             <img id="imageReveal" src={images[imageIndex]} draggable='false' className={phase == 'reveal' ? 'run-reveal' : (phase == 'carousel' || phase == 'prepare' ? 'fade' : '')}/>
             <div id="cursor" className={phase == 'reveal' ? 'run-cursor' : ''} onAnimationEnd={handlePhaseEnd}>
-                <img src={cursorImage} draggable='false'/>
+                <img className="invert-on-dark" src={cursorImage} draggable='false'/>
             </div>
         </div>
     )

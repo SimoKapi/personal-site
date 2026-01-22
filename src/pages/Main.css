@@ -1,0 +1,178 @@
+#body {
+    min-height: 100vh;
+    max-width:1600px;
+    margin:auto;
+    width:100%;
+    height:100%;
+    display: flex;
+    position: relative;
+}
+
+.markdown-body {
+    white-space: pre-wrap;
+}
+
+#body #nav {
+    flex:3;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    padding:50px 20px;
+    color:var(--textcolor);
+    max-width:400px;
+}
+
+#body #nav #about-nav {
+    font-size:23px;
+}
+
+#body #nav #profile-pic {
+    width:60%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+#body #nav ul {
+    margin-top:15px;
+    background-color: var(--panel);
+    width:100%;
+    border-radius: 7px;
+    overflow:hidden;
+    height: max-content;
+    position:sticky;
+    top:15px;
+}
+
+#body #nav ul li {
+    padding:10px 20px;
+    font-size:15px;
+    transition: 0.1s ease-in-out;
+}
+
+#body #nav ul li.active {
+    background: var(--active);
+}
+
+#body #nav .header {
+    background-color: var(--accent);
+    color: var(--textcolor);
+    font-size:17px;
+    font-weight: 700;
+}
+
+#body #nav .subHeader {
+    color:var(--textcolor);
+    text-align: center;
+    background-color: var(--subheader);
+    font-weight:700;
+}
+
+#body #nav .subHeader a {
+    color:var(--textcolor);
+    text-decoration: none;
+}
+
+#body #content {
+    flex:10;
+    padding:10px;
+    margin-top:5em;
+    display: flex;
+    flex-direction: column;
+    font-size:20px;
+}
+
+#body #content .header {
+    font-size:30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    padding:1ch;
+}
+
+#body #content .header .title {
+    display:flex;
+}
+
+#body #content .project {
+    margin-bottom:3em;
+    display:flex;
+    flex-direction: column;
+    box-shadow:0px 1px 10px black;
+    border-radius:10px;
+}
+
+#body #content .project .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x:hidden;
+    padding-bottom:2ch;
+}
+
+#body #content .project .info p {
+    padding:2ch;
+    width:100%;
+}
+
+#body #content .project .info .coverImage {
+    width:100%;
+    max-width:450px;
+    margin:20px 0;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+#body #progress {
+    flex:3;
+}
+
+@media screen and (max-width: 768px) {
+    #body #content .header {
+        flex-direction: column;
+        align-items: start;
+        padding:1ch;
+    }
+
+    #body #content .header .title {
+        font-size:23px;
+    }
+
+    #body #content .header .chips {
+        justify-content: start;
+        align-items: start;
+        margin-left:0;
+    }
+
+    #body {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #body #nav {
+        margin:0 auto;
+        max-width: 500px!important;
+        width:100%;
+    }
+
+    #body #nav .active {
+        background:none!important;
+    }
+
+    #body #progress {
+        display: none;
+    }
+
+    #body #content {
+        padding:0 1em;
+        margin-top:0;
+        font-size:14px;
+    }
+
+    #body #content .project {
+        margin:0;
+    }
+
+    #body #content .project .info .textContent {
+        font-size:17px;
+    }
+}
