@@ -26,7 +26,7 @@ function ImageCycle() {
             setPhase('prepare');
             setImageIndex((prev) => (prev + 1) % images.length);
 
-            setTimeout(() => setPhase('reveal'), 100);
+            setTimeout(() => setPhase('reveal'), 200);
         }
     }
 
@@ -42,8 +42,8 @@ function ImageCycle() {
             onMouseLeave={() => handleMouseEvent(() => setIsHovered(false))}>
             <img src={Pause} id="pause-on-hover" className="invert-on-dark" draggable="false"/>
             <div id="imageSwap">
-                <img id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
-                <img id="nextImage" draggable='false' src={images[(imageIndex + 1) % images.length]} className={phase == 'carousel' ? 'run-carousel' : ''} onAnimationEnd={handlePhaseEnd}/>
+                <img key={imageIndex} id="grayscaleImage" draggable='false' src={images[imageIndex]} className={phase == 'carousel' ? 'run-carousel' : ''}/>
+                <img key={imageIndex+1} id="nextImage" draggable='false' src={images[(imageIndex + 1) % images.length]} className={phase == 'carousel' ? 'run-carousel' : ''} onAnimationEnd={handlePhaseEnd}/>
             </div>
             <img id="imageReveal" src={images[imageIndex]} draggable='false' className={phase == 'reveal' ? 'run-reveal' : (phase == 'carousel' || phase == 'prepare' ? 'fade' : '')}/>
             <div id="cursor" className={phase == 'reveal' ? 'run-cursor' : ''} onAnimationEnd={handlePhaseEnd}>

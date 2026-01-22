@@ -26,7 +26,6 @@ function Main() {
         };
 
         const observerCallback = (entries: IntersectionObserverEntry[]) => {
-            console.log(entries)
             entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 setActiveID(entry.target.id);
