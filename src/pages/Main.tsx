@@ -1,4 +1,5 @@
 import './Main.css';
+import { useEffect, useState } from 'react';
 
 import CopyableHeader from "../CopyableHeader";
 import { mapNavbar, titleToID } from "../App";
@@ -14,7 +15,33 @@ import Construction from '../utils/Construction';
 import projects from '../projects.json';
 import work from '../work.json';
 
-function Main({activeID}: {activeID: string}) {
+function Main() {
+    const [activeID, setActiveID] = useState("");
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries: IntersectionObserverEntry[]) => {
+            console.log(entries)
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setActiveID(entry.target.id);
+            }
+            })
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        const sections = document.querySelectorAll('.project');
+        sections.forEach((section) => observer.observe(section))
+
+        return() => observer.disconnect();
+    }, [])
+
     function JsonEntryMap(source: Entry[]) {
     return (
         <>

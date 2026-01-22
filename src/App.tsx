@@ -45,31 +45,6 @@ function setGithubLogo(logo: any) {
 }
 
 function App() {
-  const [activeID, setActiveID] = useState("");
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px',
-      threshold: 0
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveID(entry.target.id);
-        }
-      })
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    const sections = document.querySelectorAll('.project');
-    sections.forEach((section) => observer.observe(section))
-
-    return() => observer.disconnect();
-  })
-
   useEffect(() => {
     loadTheme();
     const hash = window.location.hash;
@@ -131,7 +106,7 @@ function App() {
       </button>
       <Routes>
         <Route path="*" element={<Navigate replace to="/" />} />
-        <Route path="/" element={<Main activeID={activeID}/>} />
+        <Route path="/" element={<Main/>} />
         <Route path="/projects" element={<Projects/>}>
           <Route path="rasterizer" element={<Rasterizer/>} />
           <Route path="eyboard" element={<Eyboard/>} />
