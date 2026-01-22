@@ -63,4 +63,8 @@ p {
     .subheader-project {
         font-size:20px;
     }
+    
+    .subsubheader-project {
+        font-size:15px;
+    }
 }
