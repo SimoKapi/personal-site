@@ -5,7 +5,7 @@ import './ImageCycle.css'
 
 import Pause from '../assets/picture-pause.png';
 
-const imageModules = import.meta.glob('../assets/image_cycle/*.jpg', {eager: true})
+const imageModules = import.meta.glob('../assets/image_cycle/*', {eager: true})
 const images = Object.values(imageModules).map((mod: any) => mod.default);
 function ImageCycle() {
     const [imageIndex, setImageIndex] = useState(0);
