@@ -3,6 +3,7 @@ import Renderer from '/imgs/renderer.png'
 import { BlockMath, InlineMath } from 'react-katex';
 import Fail from '/imgs/projects/rasterizer/fail.png';
 import Projection from '/imgs/projects/rasterizer/projection.png';
+import Shading from '/imgs/projects/rasterizer/shading.png';
 
 function Rasterizer() {
     return (
@@ -72,6 +73,12 @@ function Rasterizer() {
             }/>
           <p>Since the points are in a space relative to the camera, all we need to do is check if <InlineMath math='N_z'/> is negative. If yes, we render the face, otherwise we skip the calculations.</p>
           <p>On average, this eliminates roughly half (~50%) of unnecessary renders, saving time and computational power.</p>
+
+          <h2 className='subsubheader-project'>Shading</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <img className="col-span-1" src={Shading}/>
+            <p>Finally, I had to implement some form of face differentiation, to prevent the rendered object from looking flat. Originally, I just assigned each face a random color, before switching to a better shading calculation. This involved calculating the ratio of the normal vector of each face to the forward vector of the camera and multiplying the face color by that. This changes its darkness based on the extent to which it's facing the camera.</p>
+          </div>
 
           <h1 className='subheader-project'>Fun Fact:</h1>
           <div className="grid md:grid-cols-2 gap-8">
