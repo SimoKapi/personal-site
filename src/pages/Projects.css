@@ -43,6 +43,10 @@
     color:var(--accent);
 }
 
+.subsubheader-project:hover .url {
+    opacity:1;
+}
+
 p {
     margin-bottom:20px;
 }
