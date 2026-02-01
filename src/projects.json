@@ -18,7 +18,7 @@
         "title": "Java Rasterizer",
         "chips": ["Java"],
         "body": "A 3D renderer implemented fully using plain Java, defining all the projection and spatial transformation calculations myself. Only standard Java libraries for mathematical calculation were used, as well as JFrame for data rendering. \n The code takes an ASCII-encoded `.stl` file as input. It can be found on my [GitHub](https://github.com/SimoKapi/Renderer).",
-        "images": ["/imgs/renderer.png"],
+        "images": ["/imgs/bucket.png"],
         "more": "rasterizer"
     },
     {

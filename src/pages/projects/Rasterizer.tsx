@@ -1,4 +1,4 @@
-import Renderer from '/imgs/renderer.png'
+import Bucket from '/imgs/bucket.png'
 
 import { BlockMath, InlineMath } from 'react-katex';
 import Fail from '/imgs/projects/rasterizer/fail.png';
@@ -17,10 +17,9 @@ function Rasterizer() {
             </div>
             <a href="https://github.com/SimoKapi/Renderer" target="_blank">View Source on GitHub →</a>
           </div>
-          {/* <img src={Renderer}/> */}
           <div className="section grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
-              <img src={Renderer}/>
+              <img src={Bucket}/>
             </div>
             <p>This project only uses projection and perspective calculations that were implemented by me. I wanted to learn more about them, and the low-level mathematics behind graphics engines, so I decided to not use any rendering engines.</p>
           </div>
