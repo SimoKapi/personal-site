@@ -33,7 +33,7 @@ function Header() {
             <div id="name">
                 <h1>Simon</h1>
                 <h1>Kapicka<span ref={caretRef}>_</span></h1>
-                <span className="location"><p>{/* California native 🇺🇸 <br/> */}📍 Based in Prague, Czechia 🇨🇿</p></span>
+                <span className="location"><p>📍 Based in San Diego, CA, USA 🇺🇸</p></span>
             </div>
         <div id="socials">
             <a href="https://simokapi.itch.io/" target="_blank"><img src={ItchioLogo}/></a>
